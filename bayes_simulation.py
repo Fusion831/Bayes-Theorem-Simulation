@@ -81,11 +81,12 @@ def main():
     Main function to set up and run the project.
     """
     # 1. Define the scenario
-    hypotheses = ['Fair Coin', 'Biased Coin']
-    initial_priors = np.array([0.5, 0.5])
+    hypotheses = ['Fair Coin','Slightly Biased Coin', 'Biased Coin']
+    initial_priors = np.array([0.5, 0.5,0.5])
     
     likelihood_table = {
         'Fair Coin': {'H': 0.5, 'T': 0.5},
+        'Slightly Biased Coin': {'H': 0.6, 'T': 0.4},
         'Biased Coin': {'H': 0.75, 'T': 0.25}
     }
     
