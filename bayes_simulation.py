@@ -89,7 +89,16 @@ def main():
         'Biased Coin': {'H': 0.75, 'T': 0.25}
     }
     
-    evidence_sequence = ['H', 'H', 'T', 'H', 'H', 'H', 'T', 'H', 'H', 'H']
+    evidence_sequence = []
+    while True:
+        evidence= input("Enter the next piece of evidence (H/T) or 'QUIT' to finish: ").strip().upper()
+        if evidence == 'QUIT':
+            break
+        elif evidence in ['H', 'T']:
+            evidence_sequence.append(evidence)
+        else:
+            print("Invalid input. Please enter 'H', 'T', or 'QUIT'.")
+        
 
     # 2. Run the simulation
     belief_history = run_simulation(initial_priors, evidence_sequence, likelihood_table, hypotheses)
